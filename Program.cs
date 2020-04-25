@@ -13,7 +13,9 @@ namespace Storage {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            DataBase.Connect("localhost", "postgres", "11111111", "storage");
+            Application.Run(new LoginForm());
         }
+        
     }
 }
