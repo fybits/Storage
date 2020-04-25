@@ -29,15 +29,13 @@ namespace Storage {
                     byte[] bytes = Encoding.ASCII.GetBytes(password);
                     string hash = Utils.ToHexString(sha.ComputeHash(bytes));
                     DataBase.Query(string.Format(
-                        "INSERT INTO users (username, password)" +
-                        "VALUES ('{0}', '{1}');",
+                        "INSERT INTO users (priv_level, username, password)" +
+                        "VALUES (1, '{0}', '{1}');",
                         login,
                         hash
                     ));
                     this.Hide();
-                    MainForm form = new MainForm();
-                    GlobalState.currentClient = user;
-                    form.Show();
+                    loginForm.Show();
                 }
             }
         }

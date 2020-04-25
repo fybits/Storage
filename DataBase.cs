@@ -27,6 +27,7 @@ namespace Storage {
                 );
             } catch (PostgresException e) {
                 Migrate();
+                Seed();
             }
         }
 
@@ -54,6 +55,13 @@ namespace Storage {
                     "password VARCHAR(256) NOT NULL," +
                     "created_at TIMESTAMP NOT NULL DEFAULT NOW()" +
                 ");"
+            );
+        }
+
+        public static void Seed() {
+            Query(
+                "INSERT INTO users (priv_level, username, password)" +
+                "VALUES (0, 'admin', 'f6e0a1e2ac41945a9aa7ff8a8aaa0cebc12a3bcc981a929ad5cf810a090e11ae');"
             );
         }
     }
