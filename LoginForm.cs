@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +16,19 @@ namespace Storage {
         }
 
         private void btnLogin_Click(object sender, EventArgs e) {
-            DataBase.
+            string login = tbLogin.Text;
+            string password = tbPass.Text;
+
+            SHA256 sha = SHA256.Create();
+            byte[] bytes = Encoding.ASCII.GetBytes(password);
+            string hash = Utils.ToHexString(sha.ComputeHash(bytes));
+
+            User user = User.Find(string.Format("username = '{0}' AND password = '{1}'", login, hash));
+            if (user == null) {
+                
+            } else {
+                this.Hide();
+            }
         }
 
         private void lnkRegister_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {

@@ -13,11 +13,16 @@ namespace Storage {
         
         public static User Find(string query) {
             var reader = DataBase.Query(string.Format("SELECT * FROM users WHERE {0};", query));
-            User user = new User();
-            user.id = reader.GetInt32(0);
-            user.username = reader.GetString(1);
-            user.created_at = reader.GetDateTime(3);
-            return user;
+            if (reader.HasRows) {
+                User user = new User();
+                user.id = reader.GetInt32(0);
+                user.username = reader.GetString(1);
+                user.created_at = reader.GetDateTime(3);
+                reader.Close();
+                return user;
+            }
+            reader.Close();
+            return null;
         }
     }
 }
