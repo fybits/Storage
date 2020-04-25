@@ -33,8 +33,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lnkLogin = new System.Windows.Forms.LinkLabel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +69,7 @@
             this.tbPassConfirmation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbPassConfirmation.Name = "tbPassConfirmation";
             this.tbPassConfirmation.Size = new System.Drawing.Size(254, 26);
-            this.tbPassConfirmation.TabIndex = 7;
+            this.tbPassConfirmation.TabIndex = 3;
             // 
             // label4
             // 
@@ -108,7 +108,7 @@
             this.tbPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbPass.Name = "tbPass";
             this.tbPass.Size = new System.Drawing.Size(254, 26);
-            this.tbPass.TabIndex = 3;
+            this.tbPass.TabIndex = 2;
             // 
             // label3
             // 
@@ -164,10 +164,22 @@
             this.lnkLogin.Location = new System.Drawing.Point(80, 4);
             this.lnkLogin.Name = "lnkLogin";
             this.lnkLogin.Size = new System.Drawing.Size(174, 16);
-            this.lnkLogin.TabIndex = 1;
+            this.lnkLogin.TabIndex = 0;
             this.lnkLogin.TabStop = true;
             this.lnkLogin.Text = "Уже есть аккаунт? Войти";
             this.lnkLogin.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkLogin_LinkClicked);
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(0, 118);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(286, 31);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Storage";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
             // 
@@ -181,18 +193,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(0, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 31);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Storage";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // RegisterForm
             // 

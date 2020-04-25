@@ -70,7 +70,7 @@
             this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(254, 41);
-            this.btnLogin.TabIndex = 4;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Войти";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -83,7 +83,7 @@
             this.tbPass.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbPass.Name = "tbPass";
             this.tbPass.Size = new System.Drawing.Size(254, 26);
-            this.tbPass.TabIndex = 3;
+            this.tbPass.TabIndex = 2;
             // 
             // label3
             // 
@@ -128,7 +128,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(0, 4, 0, 0);
             this.panel2.Size = new System.Drawing.Size(254, 30);
-            this.panel2.TabIndex = 5;
+            this.panel2.TabIndex = 4;
             // 
             // lnkRegister
             // 

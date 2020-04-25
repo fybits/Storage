@@ -20,13 +20,41 @@ namespace Storage {
 
             connection = new NpgsqlConnection(connString);
             connection.Open();
+
+            try {
+                Query(
+                    "SELECT * FROM users;"
+                );
+            } catch (PostgresException e) {
+                Migrate();
+            }
         }
 
-        public static NpgsqlDataReader Query(string query) {
+        public static object[] Query(string query) {
             var cmd = new NpgsqlCommand(query, connection);
             var reader = cmd.ExecuteReader();
             reader.Read();
-            return reader;
+            if (reader.HasRows) {
+                object[] values = new object[reader.FieldCount];
+                reader.GetValues(values);
+                reader.Close();
+                return values;
+            } else {
+                reader.Close();
+                return null;
+            }
+        }
+
+        public static void Migrate() {
+            Query(
+                "CREATE TABLE users (" +
+                    "id serial PRIMARY KEY," +
+                    "priv_level SMALLINT NOT NULL DEFAULT 2," +
+                    "username VARCHAR(50) UNIQUE NOT NULL," +
+                    "password VARCHAR(256) NOT NULL," +
+                    "created_at TIMESTAMP NOT NULL DEFAULT NOW()" +
+                ");"
+            );
         }
     }
 }

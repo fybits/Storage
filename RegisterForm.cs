@@ -36,6 +36,7 @@ namespace Storage {
                     ));
                     this.Hide();
                     MainForm form = new MainForm();
+                    GlobalState.currentClient = user;
                     form.Show();
                 }
             }
