@@ -28,6 +28,8 @@ namespace Storage {
                 
             } else {
                 this.Hide();
+                MainForm form = new MainForm();
+                form.Show();
             }
         }
 

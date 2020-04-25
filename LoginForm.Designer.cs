@@ -134,10 +134,10 @@
             // 
             this.lnkRegister.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.lnkRegister.AutoSize = true;
-            this.lnkRegister.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lnkRegister.Dock = System.Windows.Forms.DockStyle.Right;
             this.lnkRegister.Font = new System.Drawing.Font("Arial", 10F);
             this.lnkRegister.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(217)))));
-            this.lnkRegister.Location = new System.Drawing.Point(0, 4);
+            this.lnkRegister.Location = new System.Drawing.Point(162, 4);
             this.lnkRegister.Name = "lnkRegister";
             this.lnkRegister.Size = new System.Drawing.Size(92, 16);
             this.lnkRegister.TabIndex = 1;
@@ -149,10 +149,10 @@
             // 
             this.lnkGuest.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(31)))), ((int)(((byte)(63)))));
             this.lnkGuest.AutoSize = true;
-            this.lnkGuest.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lnkGuest.Dock = System.Windows.Forms.DockStyle.Left;
             this.lnkGuest.Font = new System.Drawing.Font("Arial", 10F);
             this.lnkGuest.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(116)))), ((int)(((byte)(217)))));
-            this.lnkGuest.Location = new System.Drawing.Point(143, 4);
+            this.lnkGuest.Location = new System.Drawing.Point(0, 4);
             this.lnkGuest.Name = "lnkGuest";
             this.lnkGuest.Size = new System.Drawing.Size(111, 16);
             this.lnkGuest.TabIndex = 0;
