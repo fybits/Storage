@@ -49,7 +49,7 @@ namespace Storage {
             Query(
                 "CREATE TABLE users (" +
                     "id serial PRIMARY KEY," +
-                    "priv_level SMALLINT NOT NULL DEFAULT 2," +
+                    "priv_level SMALLINT NOT NULL DEFAULT 1," +
                     "username VARCHAR(50) UNIQUE NOT NULL," +
                     "password VARCHAR(256) NOT NULL," +
                     "created_at TIMESTAMP NOT NULL DEFAULT NOW()" +

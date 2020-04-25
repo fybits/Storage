@@ -41,7 +41,14 @@ namespace Storage {
         }
 
         private void lnkGuest_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-
+            this.Hide();
+            MainForm form = new MainForm();
+            User user = new User();
+            user.username = "Гость";
+            user.privLevel = 2;
+            user.id = -1;
+            GlobalState.currentClient = user;
+            form.Show();
         }
     }
 }
