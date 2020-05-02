@@ -27,6 +27,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.cbOnlyStocked = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,6 +42,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.cbOnlyStocked);
             this.panel1.Controls.Add(this.tbSearch);
             this.panel1.Controls.Add(this.btnSearch);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -70,6 +72,17 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // cbOnlyStocked
+            // 
+            this.cbOnlyStocked.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbOnlyStocked.AutoSize = true;
+            this.cbOnlyStocked.Location = new System.Drawing.Point(3, 28);
+            this.cbOnlyStocked.Name = "cbOnlyStocked";
+            this.cbOnlyStocked.Size = new System.Drawing.Size(116, 17);
+            this.cbOnlyStocked.TabIndex = 2;
+            this.cbOnlyStocked.Text = "Только в наличии";
+            this.cbOnlyStocked.UseVisualStyleBackColor = true;
+            // 
             // Catalog
             // 
             this.AcceptButton = this.btnSearch;
@@ -95,5 +108,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.CheckBox cbOnlyStocked;
     }
 }

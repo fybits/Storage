@@ -26,7 +26,10 @@ namespace Storage {
 
         private void btnSearch_Click(object sender, EventArgs e) {
             itemsPanel.Controls.Clear();
-            List<Item> items = Item.FindAll(string.Format("description ~* '{0}' or title ~* '{0}'", tbSearch.Text));
+            List<Item> items = Item.FindAll(string.Format("(description ~* '{0}' or title ~* '{0}'){1}",
+                tbSearch.Text,
+                (cbOnlyStocked.Checked) ? " and amount != 0" : ""
+            ));
             foreach (Item item in items) {
                 ItemBox itemBox = new ItemBox(item);
                 itemBox.TopLevel = false;
