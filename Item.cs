@@ -21,8 +21,9 @@ namespace Storage {
         }
 
         public static Item Find(string query) {
-            object[] values = DataBase.Query(string.Format("SELECT * FROM items WHERE {0};", query));
-            if (values != null) {
+            List<object[]> entries = DataBase.Query(string.Format("SELECT * FROM items WHERE {0};", query));
+            if (entries.Count != 0) {
+                object[] values = entries[0];
                 Item item = new Item();
                 item.id = Convert.ToInt32(values[0]);
                 item.title = Convert.ToString(values[1]);
@@ -30,6 +31,24 @@ namespace Storage {
                 item.amount = Convert.ToInt32(values[3]);
                 item.created_at = Convert.ToDateTime(values[4]);
                 return item;
+            }
+            return null;
+        }
+
+        public static List<Item> FindAll(string query) {
+            List<object[]> entries = DataBase.Query(string.Format("SELECT * FROM items WHERE {0};", query));
+            List<Item> items = new List<Item>();
+            if (entries.Count != 0) {
+                foreach (object[] itemValues in entries) {
+                    Item item = new Item();
+                    item.id = Convert.ToInt32(itemValues[0]);
+                    item.title = Convert.ToString(itemValues[1]);
+                    item.description = Convert.ToString(itemValues[2]);
+                    item.amount = Convert.ToInt32(itemValues[3]);
+                    item.created_at = Convert.ToDateTime(itemValues[4]);
+                    items.Add(item);
+                }
+                return items;
             }
             return null;
         }

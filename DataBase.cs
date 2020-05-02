@@ -24,19 +24,22 @@ namespace Storage {
             Migrate();
         }
 
-        public static object[] Query(string query) {
+        public static List<object[]> Query(string query) {
             var cmd = new NpgsqlCommand(query, connection);
             var reader = cmd.ExecuteReader();
             reader.Read();
+            List<object[]> rows = new List<object[]>();
             if (reader.HasRows) {
-                object[] values = new object[reader.FieldCount];
-                reader.GetValues(values);
+                do {
+                    object[] values = new object[reader.FieldCount];
+                    reader.GetValues(values);
+                    rows.Add(values);
+                } while (reader.NextResult());
                 reader.Close();
-                return values;
             } else {
                 reader.Close();
-                return null;
             }
+            return rows;
         }
 
         public static void Migrate() {

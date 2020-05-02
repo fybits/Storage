@@ -45,6 +45,7 @@
             this.Name = "Catalog";
             this.Padding = new System.Windows.Forms.Padding(20);
             this.Text = "Catalog";
+            this.Load += new System.EventHandler(this.Catalog_Load);
             this.ResumeLayout(false);
 
         }

@@ -13,5 +13,9 @@ namespace Storage {
         public Catalog() {
             InitializeComponent();
         }
+
+        private void Catalog_Load(object sender, EventArgs e) {
+            
+        }
     }
 }
