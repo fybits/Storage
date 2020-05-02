@@ -13,6 +13,7 @@ namespace Storage {
         public MainForm() {
             InitializeComponent();
             GlobalState.mainForm = this;
+            
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e) {
@@ -26,6 +27,9 @@ namespace Storage {
             catalog.TopLevel = false;
             mainContentPanel.Controls.Add(catalog);
             catalog.Show();
+            if (GlobalState.currentClient.privLevel != 0) {
+                btnAddProduct.Hide();
+            }
         }
 
         public void ChangeMainContentForm(Form form) {
@@ -38,6 +42,10 @@ namespace Storage {
 
         private void btnCatalog_Click(object sender, EventArgs e) {
             ChangeMainContentForm(new Catalog());
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e) {
+            ChangeMainContentForm(new AddProductForm());
         }
     }
 }

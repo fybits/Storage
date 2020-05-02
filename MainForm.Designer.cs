@@ -24,7 +24,7 @@
         /// </summary>
         private void InitializeComponent() {
             this.sideBarPanel = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddProduct = new System.Windows.Forms.Button();
             this.btnCatalog = new System.Windows.Forms.Button();
             this.userInfoPanel = new System.Windows.Forms.Panel();
             this.username = new System.Windows.Forms.Label();
@@ -36,7 +36,7 @@
             // sideBarPanel
             // 
             this.sideBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(201)))), ((int)(((byte)(239)))));
-            this.sideBarPanel.Controls.Add(this.button2);
+            this.sideBarPanel.Controls.Add(this.btnAddProduct);
             this.sideBarPanel.Controls.Add(this.btnCatalog);
             this.sideBarPanel.Controls.Add(this.userInfoPanel);
             this.sideBarPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -45,20 +45,21 @@
             this.sideBarPanel.Size = new System.Drawing.Size(210, 525);
             this.sideBarPanel.TabIndex = 0;
             // 
-            // button2
+            // btnAddProduct
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(171)))), ((int)(((byte)(230)))));
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.button2.Location = new System.Drawing.Point(0, 146);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(210, 55);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Каталог";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnAddProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(171)))), ((int)(((byte)(230)))));
+            this.btnAddProduct.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAddProduct.FlatAppearance.BorderSize = 0;
+            this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btnAddProduct.Location = new System.Drawing.Point(0, 146);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(210, 55);
+            this.btnAddProduct.TabIndex = 3;
+            this.btnAddProduct.Text = "Добавить товар";
+            this.btnAddProduct.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddProduct.UseVisualStyleBackColor = false;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // btnCatalog
             // 
@@ -131,7 +132,7 @@
         private System.Windows.Forms.Label username;
         private System.Windows.Forms.Panel mainContentPanel;
         private System.Windows.Forms.Panel userInfoPanel;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.Button btnCatalog;
     }
 }
