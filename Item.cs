@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Storage {
-    class Item {
+    public class Item {
         public int id;
         public string title;
         public string description;

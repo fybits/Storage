@@ -80,6 +80,12 @@
     <Compile Include="DataBase.cs" />
     <Compile Include="GlobalState.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="ItemBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ItemBox.Designer.cs">
+      <DependentUpon>ItemBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +114,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="ItemBox.resx">
+      <DependentUpon>ItemBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

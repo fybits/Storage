@@ -21,6 +21,7 @@ namespace Storage {
             connection = new NpgsqlConnection(connString);
             connection.Open();
 
+            Query("DROP TABLE items;");
             Migrate();
         }
 
@@ -34,7 +35,7 @@ namespace Storage {
                     object[] values = new object[reader.FieldCount];
                     reader.GetValues(values);
                     rows.Add(values);
-                } while (reader.NextResult());
+                } while (reader.Read());
                 reader.Close();
             } else {
                 reader.Close();
@@ -88,6 +89,14 @@ namespace Storage {
                     "42" +
                 ");"
             );
+            Query(
+               "INSERT INTO items (title, description, amount)" +
+               "VALUES (" +
+                   "'Pile of shit'," +
+                   "'Literally a pile of shit, nothing to see here.'," +
+                   "10" +
+               ");"
+           );
         }
     }
 }

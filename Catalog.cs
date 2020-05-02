@@ -15,7 +15,13 @@ namespace Storage {
         }
 
         private void Catalog_Load(object sender, EventArgs e) {
-            
+            List<Item> items = Item.FindAll("1 = 1");
+            foreach (Item item in items) {
+                ItemBox itemBox = new ItemBox(item);
+                itemBox.TopLevel = false;
+                itemsPanel.Controls.Add(itemBox);
+                itemBox.Show();
+            }
         }
     }
 }
