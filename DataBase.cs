@@ -21,14 +21,7 @@ namespace Storage {
             connection = new NpgsqlConnection(connString);
             connection.Open();
 
-            try {
-                Query(
-                    "SELECT * FROM users;"
-                );
-            } catch (PostgresException e) {
-                Migrate();
-                Seed();
-            }
+            Migrate();
         }
 
         public static object[] Query(string query) {
@@ -47,21 +40,50 @@ namespace Storage {
         }
 
         public static void Migrate() {
-            Query(
-                "CREATE TABLE users (" +
-                    "id serial PRIMARY KEY," +
-                    "priv_level SMALLINT NOT NULL DEFAULT 1," +
-                    "username VARCHAR(50) UNIQUE NOT NULL," +
-                    "password VARCHAR(256) NOT NULL," +
-                    "created_at TIMESTAMP NOT NULL DEFAULT NOW()" +
-                ");"
-            );
+            try {
+                Query("SELECT * FROM users;");
+            } catch (PostgresException e) {
+                Query(
+                    "CREATE TABLE users (" +
+                        "id serial PRIMARY KEY," +
+                        "priv_level SMALLINT NOT NULL DEFAULT 1," +
+                        "username VARCHAR(50) UNIQUE NOT NULL," +
+                        "password VARCHAR(256) NOT NULL," +
+                        "created_at TIMESTAMP NOT NULL DEFAULT NOW()" +
+                    ");"
+                );
+                SeedUsers();
+            }
+            try {
+                Query("SELECT * FROM items;");
+            } catch (PostgresException e) {
+                Query(
+                    "CREATE TABLE items (" +
+                        "id serial PRIMARY KEY," +
+                        "title VARCHAR(256) NOT NULL," +
+                        "description VARCHAR(512) NOT NULL," +
+                        "amount INTEGER NOT NULL DEFAULT 0," +
+                        "created_at TIMESTAMP NOT NULL DEFAULT NOW()" +
+                    ");"
+                );
+                SeedItems();
+            }
         }
 
-        public static void Seed() {
+        public static void SeedUsers() {
             Query(
                 "INSERT INTO users (priv_level, username, password)" +
                 "VALUES (0, 'admin', 'f6e0a1e2ac41945a9aa7ff8a8aaa0cebc12a3bcc981a929ad5cf810a090e11ae');"
+            );
+        }
+        public static void SeedItems() {
+            Query(
+                "INSERT INTO items (title, description, amount)" +
+                "VALUES (" +
+                    "'Plumbus'," +
+                    "'A Plumbus is an all-purpose home device. Everyone knows what it does, so there is no reason to explain it.'," +
+                    "42" +
+                ");"
             );
         }
     }
