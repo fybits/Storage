@@ -12,6 +12,7 @@ namespace Storage {
     public partial class MainForm : Form {
         public MainForm() {
             InitializeComponent();
+            GlobalState.mainForm = this;
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e) {
@@ -19,12 +20,24 @@ namespace Storage {
         }
 
         private void MainForm_Load(object sender, EventArgs e) {
-            label1.Text = GlobalState.currentClient.username + " " + GlobalState.currentClient.privLevel;
+            username.Text = GlobalState.currentClient.username + " " + GlobalState.currentClient.privLevel;
             Catalog catalog = new Catalog();
             catalog.Dock = DockStyle.Fill;
             catalog.TopLevel = false;
             mainContentPanel.Controls.Add(catalog);
             catalog.Show();
+        }
+
+        public void ChangeMainContentForm(Form form) {
+            mainContentPanel.Controls.Clear();
+            form.Dock = DockStyle.Fill;
+            form.TopLevel = false;
+            mainContentPanel.Controls.Add(form);
+            form.Show();
+        }
+
+        private void btnCatalog_Click(object sender, EventArgs e) {
+            ChangeMainContentForm(new Catalog());
         }
     }
 }

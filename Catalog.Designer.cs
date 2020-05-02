@@ -33,10 +33,10 @@
             // 
             // itemsPanel
             // 
-            this.itemsPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.itemsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.itemsPanel.Location = new System.Drawing.Point(20, 68);
             this.itemsPanel.Name = "itemsPanel";
+            this.itemsPanel.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.itemsPanel.Size = new System.Drawing.Size(760, 362);
             this.itemsPanel.TabIndex = 0;
             // 
@@ -63,6 +63,8 @@
             // btnSearch
             // 
             this.btnSearch.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnSearch.Location = new System.Drawing.Point(679, 0);
             this.btnSearch.Name = "btnSearch";

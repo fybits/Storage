@@ -29,6 +29,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.available = new System.Windows.Forms.Label();
+            this.lnkMore = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +71,9 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lnkMore);
             this.panel1.Controls.Add(this.available);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.title);
@@ -102,6 +105,17 @@
             this.available.TabIndex = 4;
             this.available.Text = "в наличии";
             // 
+            // lnkMore
+            // 
+            this.lnkMore.AutoSize = true;
+            this.lnkMore.Location = new System.Drawing.Point(11, 213);
+            this.lnkMore.Name = "lnkMore";
+            this.lnkMore.Size = new System.Drawing.Size(61, 13);
+            this.lnkMore.TabIndex = 5;
+            this.lnkMore.TabStop = true;
+            this.lnkMore.Text = "подробнее";
+            this.lnkMore.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkMore_LinkClicked);
+            // 
             // ItemBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,5 +140,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label available;
+        private System.Windows.Forms.LinkLabel lnkMore;
     }
 }

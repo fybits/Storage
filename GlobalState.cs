@@ -7,5 +7,6 @@ using System.Threading.Tasks;
 namespace Storage {
     static class GlobalState {
         public static User currentClient;
+        public static MainForm mainForm;
     }
 }

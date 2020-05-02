@@ -9,22 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Storage {
-    public partial class ItemBox : Form {
-        Item item;
-
-        public ItemBox(Item item) {
+    public partial class ProductForm : Form {
+        public ProductForm(Item item) {
             InitializeComponent();
-            this.item = item;
             title.Text = item.title;
             description.Text = item.description;
             available.Text = "в наличии " + item.amount;
             if (item.amount == 0) {
                 btnAddToCart.Enabled = false;
             }
-        }
-
-        private void lnkMore_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-            GlobalState.mainForm.ChangeMainContentForm(new ProductForm(item));
+            if (GlobalState.currentClient.privLevel != 0) {
+                btnEdit.Hide();
+            }
         }
     }
 }
