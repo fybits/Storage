@@ -21,7 +21,8 @@ namespace Storage {
             connection = new NpgsqlConnection(connString);
             connection.Open();
 
-            Query("DROP TABLE items;");
+            //Query("DROP TABLE users;");
+            //Query("DROP TABLE items;");
             Migrate();
         }
 
@@ -97,6 +98,14 @@ namespace Storage {
                    "10" +
                ");"
            );
+           Query(
+                "INSERT INTO items (title, description, amount)" +
+                "VALUES (" +
+                    "'Крутая штука'," +
+                    "'Реально, как чечня.'," +
+                    "10" +
+                ");"
+            );
         }
     }
 }

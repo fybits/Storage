@@ -48,9 +48,8 @@ namespace Storage {
                     item.created_at = Convert.ToDateTime(itemValues[4]);
                     items.Add(item);
                 }
-                return items;
             }
-            return null;
+            return items;
         }
 
         public void Save() {

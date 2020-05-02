@@ -23,5 +23,16 @@ namespace Storage {
                 itemBox.Show();
             }
         }
+
+        private void btnSearch_Click(object sender, EventArgs e) {
+            itemsPanel.Controls.Clear();
+            List<Item> items = Item.FindAll(string.Format("description ~* '{0}' or title ~* '{0}'", tbSearch.Text));
+            foreach (Item item in items) {
+                ItemBox itemBox = new ItemBox(item);
+                itemBox.TopLevel = false;
+                itemsPanel.Controls.Add(itemBox);
+                itemBox.Show();
+            }
+        }
     }
 }
