@@ -14,6 +14,10 @@ namespace Storage {
             InitializeComponent();
             title.Text = item.title;
             description.Text = item.description;
+            available.Text = "в наличии " + item.amount;
+            if (item.amount == 0) {
+                btnAddToCart.Enabled = false;
+            }
         }
     }
 }
