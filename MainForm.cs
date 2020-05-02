@@ -20,7 +20,11 @@ namespace Storage {
 
         private void MainForm_Load(object sender, EventArgs e) {
             label1.Text = GlobalState.currentClient.username + " " + GlobalState.currentClient.privLevel;
-            
+            Catalog catalog = new Catalog();
+            catalog.Dock = DockStyle.Fill;
+            catalog.TopLevel = false;
+            mainContentPanel.Controls.Add(catalog);
+            catalog.Show();
         }
     }
 }

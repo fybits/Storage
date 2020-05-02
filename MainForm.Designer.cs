@@ -26,6 +26,7 @@
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.mainContentPanel = new System.Windows.Forms.Panel();
             this.itemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.itemBindingSource)).BeginInit();
@@ -50,6 +51,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
+            // mainContentPanel
+            // 
+            this.mainContentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainContentPanel.Location = new System.Drawing.Point(210, 0);
+            this.mainContentPanel.Name = "mainContentPanel";
+            this.mainContentPanel.Size = new System.Drawing.Size(656, 525);
+            this.mainContentPanel.TabIndex = 1;
+            // 
             // itemBindingSource
             // 
             this.itemBindingSource.DataSource = typeof(Storage.Item);
@@ -59,6 +68,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(866, 525);
+            this.Controls.Add(this.mainContentPanel);
             this.Controls.Add(this.panel1);
             this.MinimumSize = new System.Drawing.Size(800, 500);
             this.Name = "MainForm";
@@ -79,5 +89,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource itemBindingSource;
+        private System.Windows.Forms.Panel mainContentPanel;
     }
 }
