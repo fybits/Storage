@@ -29,7 +29,7 @@ namespace Storage {
             } else {
                 this.Hide();
                 MainForm form = new MainForm();
-                GlobalState.currentClient = user;
+                GlobalState.instance.currentClient = user;
                 form.Show();
             }
         }
@@ -47,7 +47,7 @@ namespace Storage {
             user.username = "Гость";
             user.privLevel = 2;
             user.id = -1;
-            GlobalState.currentClient = user;
+            GlobalState.instance.currentClient = user;
             form.Show();
         }
     }

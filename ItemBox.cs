@@ -18,13 +18,14 @@ namespace Storage {
             title.Text = item.title;
             description.Text = item.description;
             available.Text = "в наличии " + item.amount;
+            pictureBox1.Image = Image.FromFile();
             if (item.amount == 0) {
                 btnAddToCart.Enabled = false;
             }
         }
 
         private void lnkMore_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-            GlobalState.mainForm.ChangeMainContentForm(new ProductForm(item));
+            GlobalState.instance.mainForm.ChangeMainContentForm(new ProductForm(item));
         }
     }
 }

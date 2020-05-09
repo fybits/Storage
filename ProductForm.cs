@@ -18,7 +18,7 @@ namespace Storage {
             if (item.amount == 0) {
                 btnAddToCart.Enabled = false;
             }
-            if (GlobalState.currentClient.privLevel != 0) {
+            if (GlobalState.instance.currentClient.privLevel != 0) {
                 btnEdit.Hide();
             }
         }

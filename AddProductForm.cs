@@ -14,11 +14,12 @@ namespace Storage {
         public AddProductForm() {
             InitializeComponent();
         }
+        string imageName = "";
 
         private void btnSave_Click(object sender, EventArgs e) {
-            Item newItem = new Item(tbTitle.Text, tbDescription.Text, (int)nudAmount.Value);
+            Item newItem = new Item(tbTitle.Text, tbDescription.Text, imageName,(int)nudAmount.Value);
             newItem.Save();
-            GlobalState.mainForm.ChangeMainContentForm(new Catalog());
+            GlobalState.instance.mainForm.ChangeMainContentForm(new Catalog());
         }
 
         private void btnAddPhoto_Click(object sender, EventArgs e) {
@@ -30,13 +31,14 @@ namespace Storage {
             if (!Directory.Exists(baseImagePath)) {
                 Directory.CreateDirectory(baseImagePath);
             }
-            string newImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "/Images/" + Guid.NewGuid().ToString() + ".jpg");
+            imageName = Guid.NewGuid().ToString() + ".jpg";
+            string newImagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "/Images/" + imageName);
             File.Copy(fileDialogImage.FileName, newImagePath);
             pictureBox1.Image = Image.FromFile(newImagePath);
         }
 
         private void btnCancel_Click(object sender, EventArgs e) {
-            GlobalState.mainForm.ChangeMainContentForm(new Catalog());
+            GlobalState.instance.mainForm.ChangeMainContentForm(new Catalog());
         }
     }
 }
