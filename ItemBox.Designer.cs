@@ -27,9 +27,9 @@
             this.btnAddToCart = new System.Windows.Forms.Button();
             this.description = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.available = new System.Windows.Forms.Label();
             this.lnkMore = new System.Windows.Forms.LinkLabel();
+            this.available = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +49,7 @@
             // 
             this.btnAddToCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddToCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(171)))), ((int)(((byte)(230)))));
+            this.btnAddToCart.FlatAppearance.BorderSize = 0;
             this.btnAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddToCart.ForeColor = System.Drawing.Color.White;
             this.btnAddToCart.Location = new System.Drawing.Point(85, 197);
@@ -85,14 +86,16 @@
             this.panel1.Size = new System.Drawing.Size(215, 240);
             this.panel1.TabIndex = 3;
             // 
-            // pictureBox1
+            // lnkMore
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(215, 117);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.lnkMore.AutoSize = true;
+            this.lnkMore.Location = new System.Drawing.Point(11, 213);
+            this.lnkMore.Name = "lnkMore";
+            this.lnkMore.Size = new System.Drawing.Size(61, 13);
+            this.lnkMore.TabIndex = 5;
+            this.lnkMore.TabStop = true;
+            this.lnkMore.Text = "подробнее";
+            this.lnkMore.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkMore_LinkClicked);
             // 
             // available
             // 
@@ -105,16 +108,14 @@
             this.available.TabIndex = 4;
             this.available.Text = "в наличии";
             // 
-            // lnkMore
+            // pictureBox1
             // 
-            this.lnkMore.AutoSize = true;
-            this.lnkMore.Location = new System.Drawing.Point(11, 213);
-            this.lnkMore.Name = "lnkMore";
-            this.lnkMore.Size = new System.Drawing.Size(61, 13);
-            this.lnkMore.TabIndex = 5;
-            this.lnkMore.TabStop = true;
-            this.lnkMore.Text = "подробнее";
-            this.lnkMore.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkMore_LinkClicked);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(215, 117);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
             // ItemBox
             // 

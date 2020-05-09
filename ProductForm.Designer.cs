@@ -41,6 +41,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(328, 292);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -95,10 +96,10 @@
             // 
             this.available.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.available.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.available.Location = new System.Drawing.Point(477, 404);
+            this.available.Location = new System.Drawing.Point(658, 371);
             this.available.Name = "available";
             this.available.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.available.Size = new System.Drawing.Size(123, 26);
+            this.available.Size = new System.Drawing.Size(123, 16);
             this.available.TabIndex = 6;
             this.available.Text = "в наличии";
             this.available.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -111,7 +112,7 @@
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnEdit.ForeColor = System.Drawing.Color.Black;
-            this.btnEdit.Location = new System.Drawing.Point(606, 343);
+            this.btnEdit.Location = new System.Drawing.Point(425, 390);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(175, 41);
             this.btnEdit.TabIndex = 7;
