@@ -68,13 +68,7 @@ namespace Storage {
         }
         public void Update() {
             DataBase.Query(string.Format(
-                "UPDATE items" +
-                "SET" +
-                    "title = '{1}'," +
-                    "description = '{2}'," +
-                    "amount = {3}," +
-                    "image_name = '{4}'" +
-                "WHERE id = {0};",
+                "UPDATE items SET title = '{1}', description = '{2}', amount = {3}, image_name = '{4}' WHERE id = {0};",
                 id,
                 title,
                 description,

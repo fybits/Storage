@@ -68,7 +68,7 @@ namespace Storage {
                         "title VARCHAR(256) NOT NULL," +
                         "description VARCHAR(512) NOT NULL," +
                         "amount INTEGER NOT NULL DEFAULT 0," +
-                        "image_name VARCHAR(256) DEFAULT 'default.jpg'," +
+                        "image_name VARCHAR(256) DEFAULT NULL," +
                         "created_at TIMESTAMP NOT NULL DEFAULT NOW()" +
                     ");"
                 );

@@ -10,15 +10,26 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Storage {
-    public partial class AddProductForm : Form {
-        public AddProductForm() {
+    public partial class EditProductForm : Form {
+
+        private Item item;
+
+        public EditProductForm(Item item) {
             InitializeComponent();
+            this.item = item;
+            tbTitle.Text = item.title;
+            tbDescription.Text = item.description;
+            nudAmount.Value = item.amount;
+            if (!string.IsNullOrEmpty(item.image_name)) {
+                pictureBox1.Image = Image.FromFile(Path.Combine(GlobalState.instance.imageDirectory, item.image_name));
+            }
         }
-        string imageName = "";
 
         private void btnSave_Click(object sender, EventArgs e) {
-            Item newItem = new Item(tbTitle.Text, tbDescription.Text, imageName,(int)nudAmount.Value);
-            newItem.Save();
+            item.title = tbTitle.Text;
+            item.description = tbDescription.Text;
+            item.amount = (int)nudAmount.Value;
+            item.Update();
             GlobalState.instance.mainForm.ChangeMainContentForm(new Catalog());
         }
 
@@ -30,13 +41,18 @@ namespace Storage {
             if (!Directory.Exists(GlobalState.instance.imageDirectory)) {
                 Directory.CreateDirectory(GlobalState.instance.imageDirectory);
             }
-            imageName = Guid.NewGuid().ToString() + ".jpg";
-            string newImagePath = Path.Combine(GlobalState.instance.imageDirectory, imageName);
+            item.image_name = Guid.NewGuid().ToString() + ".jpg";
+            string newImagePath = Path.Combine(GlobalState.instance.imageDirectory, item.image_name);
             File.Copy(fileDialogImage.FileName, newImagePath);
             pictureBox1.Image = Image.FromFile(newImagePath);
         }
 
         private void btnCancel_Click(object sender, EventArgs e) {
+            GlobalState.instance.mainForm.ChangeMainContentForm(new Catalog());
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e) {
+            DataBase.Query(string.Format("DELETE FROM items WHERE id = {0};", item.id));
             GlobalState.instance.mainForm.ChangeMainContentForm(new Catalog());
         }
     }

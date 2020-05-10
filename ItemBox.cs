@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,7 +19,9 @@ namespace Storage {
             title.Text = item.title;
             description.Text = item.description;
             available.Text = "в наличии " + item.amount;
-            pictureBox1.Image = Image.FromFile();
+            if (!string.IsNullOrEmpty(item.image_name)) {
+                pictureBox1.Image = Image.FromFile(Path.Combine(GlobalState.instance.imageDirectory, item.image_name));
+            }
             if (item.amount == 0) {
                 btnAddToCart.Enabled = false;
             }
