@@ -29,6 +29,8 @@
             this.userInfoPanel = new System.Windows.Forms.Panel();
             this.username = new System.Windows.Forms.Label();
             this.mainContentPanel = new System.Windows.Forms.Panel();
+            this.btnUsers = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.sideBarPanel.SuspendLayout();
             this.userInfoPanel.SuspendLayout();
             this.SuspendLayout();
@@ -36,6 +38,7 @@
             // sideBarPanel
             // 
             this.sideBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(201)))), ((int)(((byte)(239)))));
+            this.sideBarPanel.Controls.Add(this.btnUsers);
             this.sideBarPanel.Controls.Add(this.btnAddProduct);
             this.sideBarPanel.Controls.Add(this.btnCatalog);
             this.sideBarPanel.Controls.Add(this.userInfoPanel);
@@ -49,9 +52,10 @@
             // 
             this.btnAddProduct.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(171)))), ((int)(((byte)(230)))));
             this.btnAddProduct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAddProduct.FlatAppearance.BorderSize = 0;
+            this.btnAddProduct.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(127)))), ((int)(((byte)(170)))));
             this.btnAddProduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btnAddProduct.ForeColor = System.Drawing.Color.White;
             this.btnAddProduct.Location = new System.Drawing.Point(0, 146);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(210, 55);
@@ -65,9 +69,10 @@
             // 
             this.btnCatalog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(171)))), ((int)(((byte)(230)))));
             this.btnCatalog.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCatalog.FlatAppearance.BorderSize = 0;
+            this.btnCatalog.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(127)))), ((int)(((byte)(170)))));
             this.btnCatalog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCatalog.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btnCatalog.ForeColor = System.Drawing.Color.White;
             this.btnCatalog.Location = new System.Drawing.Point(0, 91);
             this.btnCatalog.Name = "btnCatalog";
             this.btnCatalog.Size = new System.Drawing.Size(210, 55);
@@ -80,10 +85,12 @@
             // userInfoPanel
             // 
             this.userInfoPanel.BackColor = System.Drawing.Color.White;
+            this.userInfoPanel.Controls.Add(this.linkLabel1);
             this.userInfoPanel.Controls.Add(this.username);
             this.userInfoPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.userInfoPanel.Location = new System.Drawing.Point(0, 0);
             this.userInfoPanel.Name = "userInfoPanel";
+            this.userInfoPanel.Padding = new System.Windows.Forms.Padding(6);
             this.userInfoPanel.Size = new System.Drawing.Size(210, 91);
             this.userInfoPanel.TabIndex = 1;
             // 
@@ -91,7 +98,7 @@
             // 
             this.username.AutoSize = true;
             this.username.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.username.Location = new System.Drawing.Point(12, 9);
+            this.username.Location = new System.Drawing.Point(9, 9);
             this.username.Name = "username";
             this.username.Size = new System.Drawing.Size(51, 20);
             this.username.TabIndex = 0;
@@ -105,6 +112,34 @@
             this.mainContentPanel.Size = new System.Drawing.Size(734, 525);
             this.mainContentPanel.TabIndex = 1;
             // 
+            // btnUsers
+            // 
+            this.btnUsers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(171)))), ((int)(((byte)(230)))));
+            this.btnUsers.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnUsers.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(127)))), ((int)(((byte)(170)))));
+            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btnUsers.ForeColor = System.Drawing.Color.White;
+            this.btnUsers.Location = new System.Drawing.Point(0, 201);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(210, 55);
+            this.btnUsers.TabIndex = 4;
+            this.btnUsers.Text = "Пользователи";
+            this.btnUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(98, 72);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(103, 13);
+            this.linkLabel1.TabIndex = 1;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Выйти из аккаунта";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -117,6 +152,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Каталог";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.sideBarPanel.ResumeLayout(false);
@@ -134,5 +170,7 @@
         private System.Windows.Forms.Panel userInfoPanel;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.Button btnCatalog;
+        private System.Windows.Forms.Button btnUsers;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }

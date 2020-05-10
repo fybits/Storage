@@ -16,10 +16,6 @@ namespace Storage {
             
         }
 
-        private void MainForm_FormClosed(object sender, FormClosedEventArgs e) {
-            Application.Exit();
-        }
-
         private void MainForm_Load(object sender, EventArgs e) {
             username.Text = GlobalState.instance.currentClient.username + " " + GlobalState.instance.currentClient.privLevel;
             Catalog catalog = new Catalog();
@@ -46,6 +42,22 @@ namespace Storage {
 
         private void btnAddProduct_Click(object sender, EventArgs e) {
             ChangeMainContentForm(new AddProductForm());
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e) {
+            ChangeMainContentForm(new UsersForm());
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
+            var result = MessageBox.Show("Вы уверены что хотите выйти из аккаунта?", "Выход из аккаунта", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes) {
+                Application.Restart();
+            }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
+            
         }
     }
 }
