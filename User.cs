@@ -10,6 +10,7 @@ namespace Storage {
         public int id;
         public int privLevel;
         public string username;
+        public string phone_number;
         public DateTime created_at;
         
         public static User Find(string query) {
@@ -24,6 +25,32 @@ namespace Storage {
                 return user;
             }
             return null;
+        }
+
+        public static List<User> FindAll(string query) {
+            List<object[]> entries = DataBase.Query(string.Format("SELECT * FROM users WHERE {0};", query));
+            List<User> users = new List<User>();
+            if (entries.Count != 0) {
+                foreach (object[] itemValues in entries) {
+                    User user = new User();
+                    user.id = Convert.ToInt32(itemValues[0]);
+                    user.privLevel = Convert.ToInt16(itemValues[1]);
+                    user.username = Convert.ToString(itemValues[2]);
+                    user.created_at = Convert.ToDateTime(itemValues[4]);
+                    users.Add(user);
+                }
+            }
+            return users;
+        }
+
+        public void Update() {
+            DataBase.Query(string.Format(
+                "UPDATE items SET username = '{1}', phone_number = '{2}', priv_level = {3}, image_name = '{4}' WHERE id = {0};",
+                id,
+                username,
+                phone_number,
+                privLevel,
+            ));
         }
     }
 }
