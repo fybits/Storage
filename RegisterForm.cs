@@ -29,9 +29,10 @@ namespace Storage {
                     byte[] bytes = Encoding.ASCII.GetBytes(password);
                     string hash = Utils.ToHexString(sha.ComputeHash(bytes));
                     DataBase.Query(string.Format(
-                        "INSERT INTO users (priv_level, username, password)" +
-                        "VALUES (1, '{0}', '{1}');",
+                        "INSERT INTO users (priv_level, username, phone_number, password)" +
+                        "VALUES (1, '{0}', '{1}', '{2}');",
                         login,
+                        mtbPhone.Text,
                         hash
                     ));
                     this.Hide();

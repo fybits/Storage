@@ -53,6 +53,7 @@ namespace Storage {
                         "id serial PRIMARY KEY," +
                         "priv_level SMALLINT NOT NULL DEFAULT 1," +
                         "username VARCHAR(50) UNIQUE NOT NULL," +
+                        "phone_number VARCHAR(15)," +
                         "password VARCHAR(256) NOT NULL," +
                         "created_at TIMESTAMP NOT NULL DEFAULT NOW()" +
                     ");"
@@ -72,7 +73,7 @@ namespace Storage {
                         "created_at TIMESTAMP NOT NULL DEFAULT NOW()" +
                     ");"
                 );
-                SeedItems();
+                // SeedItems();
             }
         }
 

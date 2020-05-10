@@ -25,6 +25,8 @@ namespace Storage {
             catalog.Show();
             if (GlobalState.instance.currentClient.privLevel != 0) {
                 btnAddProduct.Hide();
+                btnUsers.Hide();
+                btnExportImport.Hide();
             }
         }
 
@@ -46,7 +48,6 @@ namespace Storage {
 
         private void btnUsers_Click(object sender, EventArgs e) {
             ChangeMainContentForm(new UsersForm());
-
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
@@ -57,7 +58,17 @@ namespace Storage {
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e) {
-            
+            var result = MessageBox.Show("Вы уверены что хотите выйти?", "Выход", MessageBoxButtons.YesNo);
+            e.Cancel = (result == DialogResult.No);
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e) {
+            Application.Exit();
+        }
+
+        private void btnExportImport_Click(object sender, EventArgs e) {
+            ChangeMainContentForm(new ExportImportForm());
+
         }
     }
 }

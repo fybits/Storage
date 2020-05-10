@@ -31,6 +31,7 @@
             this.mainContentPanel = new System.Windows.Forms.Panel();
             this.btnUsers = new System.Windows.Forms.Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.btnExportImport = new System.Windows.Forms.Button();
             this.sideBarPanel.SuspendLayout();
             this.userInfoPanel.SuspendLayout();
             this.SuspendLayout();
@@ -38,6 +39,7 @@
             // sideBarPanel
             // 
             this.sideBarPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(122)))), ((int)(((byte)(201)))), ((int)(((byte)(239)))));
+            this.sideBarPanel.Controls.Add(this.btnExportImport);
             this.sideBarPanel.Controls.Add(this.btnUsers);
             this.sideBarPanel.Controls.Add(this.btnAddProduct);
             this.sideBarPanel.Controls.Add(this.btnCatalog);
@@ -140,6 +142,23 @@
             this.linkLabel1.Text = "Выйти из аккаунта";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // btnExportImport
+            // 
+            this.btnExportImport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(171)))), ((int)(((byte)(230)))));
+            this.btnExportImport.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExportImport.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(127)))), ((int)(((byte)(170)))));
+            this.btnExportImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.btnExportImport.ForeColor = System.Drawing.Color.White;
+            this.btnExportImport.Location = new System.Drawing.Point(0, 256);
+            this.btnExportImport.Name = "btnExportImport";
+            this.btnExportImport.Size = new System.Drawing.Size(210, 55);
+            this.btnExportImport.TabIndex = 5;
+            this.btnExportImport.Text = "Импорт/Экспорт";
+            this.btnExportImport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportImport.UseVisualStyleBackColor = false;
+            this.btnExportImport.Click += new System.EventHandler(this.btnExportImport_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,5 +191,6 @@
         private System.Windows.Forms.Button btnCatalog;
         private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Button btnExportImport;
     }
 }

@@ -22,7 +22,7 @@ namespace Storage {
             if (!string.IsNullOrEmpty(item.image_name)) {
                 pictureBox1.Image = Image.FromFile(Path.Combine(GlobalState.instance.imageDirectory, item.image_name));
             }
-            if (item.amount == 0) {
+            if (item.amount == 0 || GlobalState.instance.currentClient.privLevel == 2) {
                 btnAddToCart.Enabled = false;
             }
         }

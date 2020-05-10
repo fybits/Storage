@@ -22,6 +22,15 @@ namespace Storage {
             this.image_name = image_name;
         }
 
+        public Item(int id, string title, string description, int amount, string image_name, DateTime created_at) {
+            this.id = id;
+            this.title = title;
+            this.description = description;
+            this.amount = amount;
+            this.image_name = image_name;
+            this.created_at = created_at;
+        }
+
         public static Item Find(string query) {
             List<object[]> entries = DataBase.Query(string.Format("SELECT * FROM items WHERE {0};", query));
             if (entries.Count != 0) {

@@ -71,6 +71,7 @@
             // 
             this.btnAddToCart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddToCart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(171)))), ((int)(((byte)(230)))));
+            this.btnAddToCart.FlatAppearance.BorderSize = 0;
             this.btnAddToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddToCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btnAddToCart.ForeColor = System.Drawing.Color.White;
@@ -78,7 +79,7 @@
             this.btnAddToCart.Name = "btnAddToCart";
             this.btnAddToCart.Size = new System.Drawing.Size(175, 41);
             this.btnAddToCart.TabIndex = 4;
-            this.btnAddToCart.Text = "Добавть в корзину";
+            this.btnAddToCart.Text = "Добавить в корзину";
             this.btnAddToCart.UseVisualStyleBackColor = false;
             // 
             // panel1

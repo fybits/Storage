@@ -77,6 +77,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CSVTokenizer.cs" />
     <Compile Include="EditProductForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +91,12 @@
       <DependentUpon>AddProductForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DataBase.cs" />
+    <Compile Include="ExportImportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportImportForm.Designer.cs">
+      <DependentUpon>ExportImportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="GlobalState.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemBox.cs">
@@ -143,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddProductForm.resx">
       <DependentUpon>AddProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportImportForm.resx">
+      <DependentUpon>ExportImportForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemBox.resx">
       <DependentUpon>ItemBox.cs</DependentUpon>

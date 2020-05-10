@@ -21,7 +21,8 @@ namespace Storage {
                 user.id = Convert.ToInt32(values[0]);
                 user.privLevel = Convert.ToInt16(values[1]);
                 user.username = Convert.ToString(values[2]);
-                user.created_at = Convert.ToDateTime(values[4]);
+                user.phone_number = Convert.ToString(values[3]);
+                user.created_at = Convert.ToDateTime(values[5]);
                 return user;
             }
             return null;
@@ -36,7 +37,8 @@ namespace Storage {
                     user.id = Convert.ToInt32(itemValues[0]);
                     user.privLevel = Convert.ToInt16(itemValues[1]);
                     user.username = Convert.ToString(itemValues[2]);
-                    user.created_at = Convert.ToDateTime(itemValues[4]);
+                    user.phone_number = Convert.ToString(itemValues[3]);
+                    user.created_at = Convert.ToDateTime(itemValues[5]);
                     users.Add(user);
                 }
             }
@@ -45,11 +47,11 @@ namespace Storage {
 
         public void Update() {
             DataBase.Query(string.Format(
-                "UPDATE items SET username = '{1}', phone_number = '{2}', priv_level = {3}, image_name = '{4}' WHERE id = {0};",
+                "UPDATE users SET username = '{1}', phone_number = '{2}', priv_level = {3} WHERE id = {0};",
                 id,
                 username,
                 phone_number,
-                privLevel,
+                privLevel
             ));
         }
     }

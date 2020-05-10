@@ -27,7 +27,7 @@ namespace Storage {
         }
 
         private void btnSave_Click(object sender, EventArgs e) {
-            tableUsers.Rows[0].Cells
+            foreach (DataGridViewRow row in tableUsers.Rows) {
                 User user = new User();
                 object[] userData = new object[4];
                 int i = 0;

@@ -19,7 +19,7 @@ namespace Storage {
             title.Text = item.title;
             description.Text = item.description;
             available.Text = "в наличии " + item.amount;
-            if (item.amount == 0) {
+            if (item.amount == 0 || GlobalState.instance.currentClient.privLevel == 2) {
                 btnAddToCart.Enabled = false;
             }
             if (!string.IsNullOrEmpty(item.image_name)) {
